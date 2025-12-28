@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>IPL CAPTIONS Gallery</title>
+<link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<header>IPL CAPTIONS Gallery</header>
+
+<div class="container">
+    <div class="gallery-box">
+        <img id="galleryImage" src="ipl caption.webp" alt="IPL CAPTIONS">
+        <p class="caption" id="caption">IPL CAPTIONS</p>
+
+        <div class="buttons">
+            <button onclick="prev()">Previous</button>
+            <button onclick="next()">Next</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+Designed by SABARINATHAN A(25005972) &copy; 2025
+</footer>
+
+<script>
+let gallery = [
+    "rutu csk.jpg",
+    "jadeja rr.jpg",
+    "harthik mi.png",
+    "rajat rcb.png",
+    "shreyas pbks.png"
+];
+
+let captions = [
+    "ruturaj gaikwad (CSK)",
+    "ravindra jadeja (RR)",
+    "harthik pandya (MI)",
+    "rajat patidar (RCB)",
+    "shreyas iyer (PBKS)"
+];
+
+let index = 0;
+
+function next(){
+    index++;
+    if(index >= gallery.length){
+        index = 0;
+    }
+    document.getElementById("galleryImage").src = gallery[index];
+    document.getElementById("caption").innerText = captions[index];
+}
+
+function prev(){
+    index--;
+    if(index < 0){
+        index = gallery.length - 1;
+    }
+    document.getElementById("galleryImage").src = gallery[index];
+    document.getElementById("caption").innerText = captions[index];
+}
+</script>
+
+</body>
+</html>
+
